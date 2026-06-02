@@ -1,18 +1,45 @@
+import Image from "next/image";
+
 interface ImagePlaceholderProps {
   description: string;
+  src?: string;
   eyebrow?: string;
+  logoSrc?: string;
+  width?: string;
   height?: string;
   className?: string;
 }
 
 export default function ImagePlaceholder({
   description,
+  src,
   eyebrow = "Bio-Upcycling Platform",
+  logoSrc,
+  width = "100%",
   height = "260px",
   className = "",
 }: ImagePlaceholderProps) {
+  if (src) {
+    return (
+      <figure className={`sample-image ${className}`} style={{ width, minHeight: height }}>
+        <Image src={src} alt={description} fill sizes="(max-width: 768px) 100vw, 50vw" className="sample-image-media" unoptimized />
+        <div className="sample-image-overlay" />
+        {logoSrc && (
+          <Image
+            src={logoSrc}
+            alt="KENTECH 바이오업사이클링 센터"
+            width={230}
+            height={68}
+            className="sample-image-logo"
+            unoptimized
+          />
+        )}
+      </figure>
+    );
+  }
+
   return (
-    <div className={`visual-panel ${className}`} style={{ minHeight: height }}>
+    <div className={`visual-panel ${className}`} style={{ width, minHeight: height }}>
       <div className="visual-grid" />
       <div className="visual-flow" aria-hidden="true">
         <span />

@@ -25,11 +25,11 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 py-12 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
           <Image
-            src="/logo.png"
+            src="/logo-white.png"
             alt="KENTECH 바이오업사이클링 센터"
             width={190}
             height={54}
-            className="mb-5 h-auto w-[180px] object-contain brightness-0 invert"
+            className="mb-5 h-auto w-[180px] object-contain"
           />
           <p className="max-w-xl text-sm leading-7 text-white/65">
             바이오매스를 청정에너지와 순환 탄소 솔루션으로 전환하는 연구·실증·스케일업 플랫폼입니다.

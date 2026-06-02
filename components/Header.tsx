@@ -24,7 +24,7 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between gap-5">
           <Link href="/" className="flex min-w-0 items-center" aria-label="홈으로 이동">
             <Image
-              src="/logo.png"
+              src="/logo-transparent.png"
               alt="KENTECH 바이오업사이클링 센터"
               width={184}
               height={52}

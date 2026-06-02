@@ -1,4 +1,5 @@
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import ScrollReveal from "@/components/ScrollReveal";
 import Link from "next/link";
 
 const researchAreas = [
@@ -57,9 +58,11 @@ export default function Home() {
 
           <div className="animate-enter delay-150">
             <ImagePlaceholder
+              src="/sample-hero.png"
+              logoSrc="/logo-white.png"
               height="470px"
               eyebrow="Waste to Hydrogen"
-              description="Feedstock, biogas, RNG, hydrogen and carbon loop in one pilot-scale research platform"
+              description="Pilot-scale bio-upcycling facility"
               className="hero-art shadow-2xl shadow-slate-950/30"
             />
           </div>
@@ -68,52 +71,68 @@ export default function Home() {
 
       <section className="border-b border-slate-200 bg-white">
         <div className="section-wrap grid gap-4 py-7 sm:grid-cols-3">
-          {stats.map(([value, label]) => (
-            <div key={label} className="stat-item">
-              <strong>{value}</strong>
-              <span>{label}</span>
-            </div>
+          {stats.map(([value, label], index) => (
+            <ScrollReveal key={label} delay={index * 80}>
+              <div className="stat-item">
+                <strong>{value}</strong>
+                <span>{label}</span>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
       <section className="section-pad bg-white">
-        <div className="section-wrap grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
+        <div className="section-wrap grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <ScrollReveal>
             <p className="section-kicker">Center Overview</p>
             <h2 className="section-title">연구실을 넘어 실증과 사업화까지 연결하는 센터</h2>
-          </div>
-          <div className="space-y-6 text-base leading-8 text-slate-650">
-            <p>
-              센터의 MVP 메시지는 단순합니다. 유기성 폐기물을 에너지·소재 자원으로 전환하고, 그 기술을 산업 현장에서
-              검증 가능한 수준까지 끌어올리는 것입니다.
+            <p className="section-copy mt-5">
+              유기성 폐기물을 에너지·소재 자원으로 전환하고, 그 기술을 산업 현장에서 검증 가능한 수준까지 끌어올립니다.
             </p>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {["연구", "파일럿 실증", "산업협력"].map((label) => (
-                <Link key={label} href={label === "연구" ? "/research" : label === "파일럿 실증" ? "/pilot" : "/industry"} className="mini-card">
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {[
+                ["연구", "/research"],
+                ["파일럿 실증", "/pilot"],
+                ["산업협력", "/industry"],
+              ].map(([label, href]) => (
+                <Link key={label} href={href} className="mini-card">
                   <span>{label}</span>
                   <small>자세히 보기</small>
                 </Link>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={140}>
+            <ImagePlaceholder
+              src="/sample-lab.png"
+              height="420px"
+              eyebrow="Research Infrastructure"
+              description="Research and analysis laboratory"
+            />
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="section-pad bg-slate-50">
         <div className="section-wrap">
-          <div className="section-heading">
+          <ScrollReveal className="section-heading">
             <p className="section-kicker">Research Areas</p>
             <h2 className="section-title">6대 통합 연구 도메인</h2>
-            <p className="section-copy">BRIC형 연구센터 구조를 따라 핵심 연구 분야를 빠르게 훑고, 상세 페이지로 이동할 수 있게 구성했습니다.</p>
-          </div>
+            <p className="section-copy">
+              BRIC형 연구센터 구조를 따라 핵심 연구 분야를 빠르게 훑고, 상세 페이지로 이동할 수 있게 구성했습니다.
+            </p>
+          </ScrollReveal>
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {researchAreas.map(([title, desc], index) => (
-              <Link key={title} href="/research" className="research-card reveal-card" style={{ animationDelay: `${index * 55}ms` }}>
-                <span className="card-index">{String(index + 1).padStart(2, "0")}</span>
-                <h3>{title}</h3>
-                <p>{desc}</p>
-              </Link>
+              <ScrollReveal key={title} delay={index * 70}>
+                <Link href="/research" className="research-card">
+                  <span className="card-index">{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{title}</h3>
+                  <p>{desc}</p>
+                </Link>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -121,7 +140,7 @@ export default function Home() {
 
       <section className="section-pad bg-white">
         <div className="section-wrap grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <div>
+          <ScrollReveal>
             <p className="section-kicker">Technology Platform</p>
             <h2 className="section-title">폐기물에서 수소까지 이어지는 순환 에너지 흐름</h2>
             <p className="section-copy mt-5">
@@ -130,27 +149,32 @@ export default function Home() {
             <Link href="/technology" className="btn btn-outline mt-7">
               기술 플랫폼 상세 보기
             </Link>
-          </div>
-          <div className="flow-panel">
-            {platformSteps.map(([num, title, desc]) => (
-              <div key={num} className="flow-step">
-                <span>{num}</span>
-                <strong>{title}</strong>
-                <p>{desc}</p>
-              </div>
-            ))}
-          </div>
+          </ScrollReveal>
+          <ScrollReveal delay={140}>
+            <div className="flow-panel">
+              {platformSteps.map(([num, title, desc]) => (
+                <div key={num} className="flow-step">
+                  <span>{num}</span>
+                  <strong>{title}</strong>
+                  <p>{desc}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="section-pad bg-[#0f2440] text-white">
         <div className="section-wrap grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-          <ImagePlaceholder
-            height="380px"
-            eyebrow="Pilot & Facilities"
-            description="Bench scale validation, pilot operation and industrial demonstration for TRL 1-9"
-          />
-          <div>
+          <ScrollReveal>
+            <ImagePlaceholder
+              src="/sample-pilot.png"
+              height="380px"
+              eyebrow="Pilot & Facilities"
+              description="Bench scale validation to industrial demonstration"
+            />
+          </ScrollReveal>
+          <ScrollReveal delay={140}>
             <p className="section-kicker text-emerald-200">Pilot Scale-up</p>
             <h2 className="section-title text-white">벤치 스케일에서 산업 실증까지</h2>
             <p className="mt-5 text-base leading-8 text-white/68">
@@ -165,13 +189,13 @@ export default function Home() {
                 시설 보기
               </Link>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="section-pad bg-white">
         <div className="section-wrap">
-          <div className="mb-9 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <ScrollReveal className="mb-9 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="section-kicker">Projects & Partnership</p>
               <h2 className="section-title">협력으로 이어지는 대표 프로젝트</h2>
@@ -179,20 +203,33 @@ export default function Home() {
             <Link href="/projects" className="text-sm font-bold text-emerald-700 hover:text-emerald-800">
               전체 프로젝트 보기
             </Link>
-          </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {projects.map(([title, desc]) => (
-              <article key={title} className="project-card">
-                <h3>{title}</h3>
-                <p>{desc}</p>
-              </article>
-            ))}
+          </ScrollReveal>
+          <div className="grid gap-5 md:grid-cols-[1fr_1.2fr]">
+            <ScrollReveal>
+              <ImagePlaceholder
+                src="/sample-partnership.png"
+                height="100%"
+                eyebrow="Industry Partnership"
+                description="Joint R&D and field demonstration"
+                className="h-full"
+              />
+            </ScrollReveal>
+            <div className="grid gap-5">
+              {projects.map(([title, desc], index) => (
+                <ScrollReveal key={title} delay={index * 80}>
+                  <article className="project-card min-h-0">
+                    <h3>{title}</h3>
+                    <p>{desc}</p>
+                  </article>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="cta-band">
-        <div className="section-wrap flex flex-col gap-6 py-14 md:flex-row md:items-center md:justify-between">
+        <ScrollReveal className="section-wrap flex flex-col gap-6 py-14 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="section-kicker">Work With Us</p>
             <h2 className="text-3xl font-bold tracking-tight text-slate-950">공동 R&D, 기술이전, 실증 협력을 시작하세요</h2>
@@ -200,7 +237,7 @@ export default function Home() {
           <Link href="/contact" className="btn btn-primary justify-center">
             문의하기
           </Link>
-        </div>
+        </ScrollReveal>
       </section>
     </>
   );
