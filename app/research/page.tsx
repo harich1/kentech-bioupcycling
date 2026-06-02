@@ -1,71 +1,87 @@
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import PageHero from "@/components/PageHero";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const domains = [
   {
-    id: "biogas", title: "바이오가스 & 혐기성 소화",
-    topics: ["건식 혐기성 소화 기술", "고율 혐기성 소화 공정", "유기성 폐기물 자원화", "농업 바이오매스 처리"],
-    imgDesc: "혐기성 소화 반응기 설비 사진 (800×600px)",
+    title: "바이오가스 & 혐기성 소화",
+    src: "/photo-lab-reactors.png",
+    topics: ["건식·고율 혐기성 소화", "농업 부산물 및 음식물 폐기물 처리", "소화조 운전 조건 최적화"],
   },
   {
-    id: "rng", title: "재생천연가스 (RNG)",
-    topics: ["바이오가스 정제·고도화", "메탄 순도 향상 공정", "도시가스망 연계 플랫폼"],
-    imgDesc: "RNG 정제 설비 또는 가스 압축 장비 사진 (800×600px)",
+    title: "재생천연가스(RNG)",
+    src: "/photo-pilot-plant.png",
+    topics: ["바이오가스 정제·고도화", "메탄 순도 향상", "도시가스망 연계 가능성 평가"],
   },
   {
-    id: "hydrogen", title: "RNG 기반 수소 생산",
-    topics: ["수증기 메탄 개질 (SMR)", "열촉매 수소 생산 기술"],
-    imgDesc: "수소 생산 장치 또는 SMR 반응기 사진 (800×600px)",
+    title: "RNG 기반 수소 생산",
+    src: "/photo-analysis-lab.png",
+    topics: ["촉매 개질 반응", "가스 조성 분석", "수소 생산 효율 평가"],
   },
   {
-    id: "storage", title: "수소 저장 & 운송",
-    topics: ["수소 혼입 기술 (Blending)", "도시가스 공급망 기반 수송", "LOHC (액상유기수소화물)", "금속수소화물 시스템"],
-    imgDesc: "가스 저장 설비 또는 수소 탱크 사진 (800×600px)",
-  },
-  {
-    id: "carbon", title: "탄소 순환",
-    topics: ["탄소 포집·활용 (CCU)", "영양염 회수 기술", "바이오차(Biochar) 생산", "전과정 평가 (LCA)"],
-    imgDesc: "탄소 순환 공정 또는 바이오차 생산 설비 사진 (800×600px)",
-  },
-  {
-    id: "biomaterial", title: "바이오소재",
-    topics: ["PHA (폴리하이드록시알카노에이트)", "바이오플라스틱", "폐기물→소재 전환 기술"],
-    imgDesc: "바이오소재 시제품 또는 실험실 사진 (800×600px)",
+    title: "탄소 순환 & 바이오소재",
+    src: "/greeneple-ados-innovation.png",
+    topics: ["바이오차 및 영양염 회수", "CCU 연계", "바이오소재 전환 경로 탐색"],
   },
 ];
 
 export default function ResearchPage() {
   return (
     <>
-      <PageHero breadcrumb="홈 > 연구" title="연구" subtitle="6대 통합 연구 도메인 — 바이오매스에서 청정에너지·소재까지" />
+      <PageHero
+        breadcrumb="홈 > 연구"
+        title="연구"
+        subtitle="바이오매스에서 청정에너지와 소재까지 이어지는 통합 연구 도메인"
+      />
 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-sm mb-12 max-w-2xl" style={{ color: "var(--text-mid)" }}>
-            원료 수집부터 에너지·소재 생산, 탄소 순환까지 엔드투엔드 연구 역량을 갖추고 있습니다.
-            각 도메인은 독립적으로, 또는 통합 플랫폼으로 운영됩니다.
-          </p>
-          <div className="space-y-14">
-            {domains.map((domain, i) => (
-              <div key={domain.id} id={domain.id}
-                className={`grid md:grid-cols-2 gap-10 items-center ${i % 2 === 1 ? "" : ""}`}>
-                <div className={i % 2 === 1 ? "md:order-2" : ""}>
-                  <h3 className="text-xl font-bold mb-4" style={{ color: "var(--primary)" }}>{domain.title}</h3>
-                  <ul className="space-y-2.5">
-                    {domain.topics.map((t) => (
-                      <li key={t} className="flex items-center gap-3 text-sm" style={{ color: "var(--text-mid)" }}>
-                        <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--accent)" }} />
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={i % 2 === 1 ? "md:order-1" : ""}>
-                  <ImagePlaceholder description={domain.imgDesc} height="260px" />
-                </div>
-              </div>
+          <ScrollReveal className="max-w-3xl mb-12">
+            <p className="section-kicker">Research Domains</p>
+            <h2 className="text-3xl font-black mb-4" style={{ color: "var(--primary)" }}>실험실 연구와 파일럿 검증을 한 흐름으로 연결합니다</h2>
+            <p className="text-sm leading-7" style={{ color: "var(--text-mid)" }}>
+              각 연구 도메인은 독립적인 기술 축이면서 동시에 하나의 순환 플랫폼으로 통합됩니다.
+              원료 특성, 공정 운전, 가스 고도화, 수소 전환, 탄소 감축 효과를 함께 검증합니다.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-7">
+            {domains.map((domain, index) => (
+              <ScrollReveal key={domain.title} delay={index * 80}>
+                <article className="asset-card h-full">
+                  <ImagePlaceholder src={domain.src} description={domain.title} height="250px" className="!rounded-none" />
+                  <div className="asset-card-body">
+                    <h3 className="text-xl font-black mb-4" style={{ color: "var(--primary)" }}>{domain.title}</h3>
+                    <ul className="space-y-2">
+                      {domain.topics.map((topic) => (
+                        <li key={topic} className="flex gap-3 text-sm" style={{ color: "var(--text-mid)" }}>
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--accent)" }} />
+                          {topic}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16" style={{ backgroundColor: "var(--gray-bg)" }}>
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+          <ScrollReveal>
+            <ImagePlaceholder src="/greeneple-circular-rng.png" description="자원순환 RNG 공정 개념도" height="360px" />
+          </ScrollReveal>
+          <ScrollReveal delay={120}>
+            <p className="section-kicker">Integrated Pathway</p>
+            <h2 className="text-2xl font-black mb-5" style={{ color: "var(--primary)" }}>자원순환형 RNG·수소 연구 경로</h2>
+            <p className="text-sm leading-8" style={{ color: "var(--text-mid)" }}>
+              단순한 폐기물 처리 기술이 아니라, 바이오매스를 에너지 캐리어와 탄소 저감 자산으로 전환하는
+              공정 전체를 연구합니다. 실제 사업화 자료와 공정 이미지를 함께 배치해 연구 방향이 더 직관적으로
+              보이도록 구성했습니다.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
     </>

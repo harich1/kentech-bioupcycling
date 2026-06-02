@@ -1,91 +1,66 @@
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import ScrollReveal from "@/components/ScrollReveal";
 
-const positions = [
-  { badge: "PhD", type: "박사 과정", desc: "바이오업사이클링 핵심 분야 박사 연구원 모집", reqs: ["관련 분야 석사 학위 또는 동등 경력", "영어 논문 작성 능력", "팀 협업 능력"] },
-  { badge: "MS", type: "석사 과정", desc: "청정수소·바이오매스 분야 석사 연구원 모집", reqs: ["관련 분야 학사 학위", "기초 실험 능력", "성실한 연구 태도"] },
-  { badge: "Post-Doc", type: "박사 후 연구원", desc: "포스트닥 연구원 포지션 모집", reqs: ["관련 분야 박사 학위", "SCI 논문 실적", "독립적 연구 수행 능력"] },
-  { badge: "Industry", type: "산업체 연구원", desc: "산업체 연구원 공동 협력 포지션", reqs: ["관련 분야 경력 보유", "산업 현장 경험 우대"] },
+const programs = [
+  ["재생천연가스(RNG)", "바이오가스 정제·고도화 및 도시가스 연계 연구"],
+  ["바이오 수소 시스템", "바이오매스 기반 수소 생산과 저장·운송 연구"],
+  ["탄소중립 공학", "CCU, LCA, 바이오차 등 탄소 순환 기술 연구"],
+  ["학부생 인턴십", "방학 중 단기 연구 참여와 실험실 실습"],
 ];
 
 export default function EducationPage() {
   return (
     <>
-      <PageHero breadcrumb="홈 > 교육·채용" title="교육 & 채용" subtitle="청정에너지 미래를 함께 만들어갈 인재를 모집합니다" />
+      <PageHero
+        breadcrumb="홈 > 교육·채용"
+        title="교육 & 채용"
+        subtitle="청정에너지와 바이오업사이클링의 다음 세대를 함께 키웁니다."
+      />
 
-      {/* 대학원 프로그램 */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-3" style={{ color: "var(--primary)" }}>대학원 연구 프로그램</h2>
-          <p className="text-sm mb-8" style={{ color: "var(--text-mid)" }}>다양한 청정에너지 분야의 심화 연구 기회를 제공합니다</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-            {[
-              { label: "재생천연가스 (RNG)", desc: "바이오가스 정제·고도화 및 도시가스 연계 연구" },
-              { label: "바이오 수소(BioH₂) 시스템", desc: "바이오매스 기반 수소 생산 기술 연구" },
-              { label: "탄소중립 공학", desc: "탄소 포집·활용·저장 기술 및 LCA 연구" },
-              { label: "전과정 평가 (LCA)", desc: "에너지 시스템의 환경영향 평가 방법론 연구" },
-              { label: "수소 저장 & 운송 시스템", desc: "LOHC, 금속수소화물 등 수소 저장 기술 연구" },
-              { label: "학부생 인턴십 프로그램", desc: "방학 중 단기 연구 참여 및 실습 기회 제공" },
-            ].map((p) => (
-              <div key={p.label} className="p-5 rounded-lg border border-gray-100 shadow-sm">
-                <h3 className="font-semibold text-sm mb-1" style={{ color: "var(--primary)" }}>{p.label}</h3>
-                <p className="text-xs" style={{ color: "var(--text-mid)" }}>{p.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            <ImagePlaceholder description="인턴·학생 연구 활동 장면 사진 (800×600px)" height="260px" />
-            <ImagePlaceholder description="외국인 유학생 또는 연구팀 활동 사진 (800×600px)" height="260px" />
-          </div>
-        </div>
-      </section>
-
-      {/* 채용 공고 */}
-      <section className="py-16" style={{ backgroundColor: "var(--gray-bg)" }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "var(--primary)" }}>채용 공고</h2>
-          <div className="grid md:grid-cols-2 gap-5">
-            {positions.map((pos) => (
-              <div key={pos.type} className="bg-white rounded-lg p-6 border border-gray-100 shadow-sm">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="px-2.5 py-0.5 rounded text-xs font-bold text-white"
-                    style={{ backgroundColor: "var(--primary)" }}>{pos.badge}</span>
-                  <h3 className="font-bold" style={{ color: "var(--primary)" }}>{pos.type}</h3>
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <ScrollReveal>
+            <p className="section-kicker">People</p>
+            <h2 className="text-3xl font-black mb-5" style={{ color: "var(--primary)" }}>실험, 데이터, 사업화를 모두 경험하는 연구 교육</h2>
+            <p className="text-sm leading-8 mb-8" style={{ color: "var(--text-mid)" }}>
+              학생과 연구자는 실험실 장비 운용, 분석 데이터 해석, 파일럿 스케일 검증, 산업 파트너와의 협업을
+              하나의 연구 과정 안에서 경험합니다.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {programs.map(([title, desc]) => (
+                <div key={title} className="asset-card">
+                  <div className="asset-card-body">
+                    <h3 className="font-black mb-2" style={{ color: "var(--primary)" }}>{title}</h3>
+                    <p className="text-xs leading-6" style={{ color: "var(--text-mid)" }}>{desc}</p>
+                  </div>
                 </div>
-                <p className="text-sm mb-4" style={{ color: "var(--text-mid)" }}>{pos.desc}</p>
-                <ul className="space-y-1.5 mb-4">
-                  {pos.reqs.map((r) => (
-                    <li key={r} className="flex items-center gap-2 text-xs" style={{ color: "var(--text-mid)" }}>
-                      <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--accent)" }} />
-                      {r}
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/contact" className="text-xs font-semibold hover:underline" style={{ color: "var(--accent)" }}>
-                  지원 문의 →
-                </Link>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={120}>
+            <ImagePlaceholder src="/photo-analysis-lab.png" description="학생 연구원이 분석 장비를 사용하는 실험실" height="390px" />
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-14 bg-white border-t border-gray-100">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <h2 className="text-xl font-bold mb-3" style={{ color: "var(--primary)" }}>지원 및 문의</h2>
-          <p className="text-sm mb-6" style={{ color: "var(--text-mid)" }}>포지션 문의 및 지원서는 이메일 또는 문의 양식을 통해 접수해 주세요</p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <Link href="/contact" className="px-6 py-2.5 rounded text-sm font-semibold text-white" style={{ backgroundColor: "var(--accent)" }}>
-              지원 문의하기
-            </Link>
-            <a href="mailto:bioupcycling@kentech.ac.kr"
-              className="px-6 py-2.5 rounded text-sm font-semibold border"
-              style={{ borderColor: "var(--accent)", color: "var(--accent)" }}>
-              이메일 보내기
-            </a>
-          </div>
+      <section className="py-16" style={{ backgroundColor: "var(--gray-bg)" }}>
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-6">
+          {[
+            ["/kentech-campus-2.png", "KENTECH 캠퍼스", "에너지 특화 연구 환경에서 대학원 연구를 수행합니다."],
+            ["/photo-lab-reactors.png", "실험실 연구", "반응기와 분석 장비를 직접 다루는 실험 중심 교육을 제공합니다."],
+            ["/photo-partner-meeting.png", "산업 협업", "기업·기관 파트너와 실증 과제를 함께 논의합니다."],
+          ].map(([src, title, desc], index) => (
+            <ScrollReveal key={title} delay={index * 90}>
+              <article className="asset-card h-full">
+                <ImagePlaceholder src={src} description={title} height="230px" className="!rounded-none" />
+                <div className="asset-card-body">
+                  <h3 className="font-black mb-2" style={{ color: "var(--primary)" }}>{title}</h3>
+                  <p className="text-sm leading-7" style={{ color: "var(--text-mid)" }}>{desc}</p>
+                </div>
+              </article>
+            </ScrollReveal>
+          ))}
         </div>
       </section>
     </>

@@ -332,6 +332,76 @@ a {
   padding: 26px;
 }
 
+.page-hero {
+  background:
+    linear-gradient(90deg, rgba(15, 36, 64, 0.96), rgba(15, 36, 64, 0.78)),
+    url("/kentech-sub-visual.jpg") center / cover;
+  border-bottom: 1px solid #d8e1e8;
+  color: white;
+  padding-block: 58px;
+}
+
+.page-crumb {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.page-hero h1 {
+  color: white;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 900;
+  line-height: 1.18;
+}
+
+.page-subtitle {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 15px;
+  line-height: 1.75;
+  margin-top: 12px;
+  max-width: 780px;
+}
+
+.section-kicker {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.asset-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(15, 36, 64, 0.06);
+  overflow: hidden;
+}
+
+.asset-card-body {
+  padding: 22px;
+}
+
+.contact-input {
+  background: white;
+  border: 1px solid #d8e1e8;
+  border-radius: 6px;
+  color: var(--primary);
+  display: block;
+  font-size: 14px;
+  outline: none;
+  padding: 13px 14px;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+  width: 100%;
+}
+
+.contact-input:focus {
+  border-color: rgba(0, 168, 120, 0.7);
+  box-shadow: 0 0 0 3px rgba(0, 168, 120, 0.14);
+}
+
 .scroll-reveal {
   opacity: 0;
   transform: translateY(28px);
