@@ -1,19 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: "var(--primary-dark)" }}>
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 rounded flex items-center justify-center text-white text-xs font-bold"
-              style={{ backgroundColor: "var(--accent)" }}>
-              BUC
-            </div>
-            <div>
-              <div className="text-white font-semibold text-sm">KENTECH 바이오업사이클링 센터</div>
-              <div className="text-xs mt-0.5" style={{ color: "var(--accent-light)" }}>Bio-Upcycling Research Center</div>
-            </div>
+          <div className="mb-5">
+            <Image
+              src="/logo.png"
+              alt="KENTECH 바이오업사이클링 센터"
+              width={180}
+              height={50}
+              className="object-contain"
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
           </div>
           <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.55)" }}>
             바이오매스를 청정에너지와 순환 탄소 솔루션으로 전환하는<br />
