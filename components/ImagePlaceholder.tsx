@@ -22,7 +22,15 @@ export default function ImagePlaceholder({
   if (src) {
     return (
       <figure className={`sample-image ${className}`} style={{ width, minHeight: height }}>
-        <Image src={src} alt={description} fill sizes="(max-width: 768px) 100vw, 50vw" className="sample-image-media" unoptimized />
+        <Image
+          src={src}
+          alt={description}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="sample-image-media"
+          priority={src.includes("hero")}
+          unoptimized
+        />
         <div className="sample-image-overlay" />
         {logoSrc && (
           <Image
