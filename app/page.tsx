@@ -58,11 +58,11 @@ export default function Home() {
 
           <div className="animate-enter delay-150">
             <ImagePlaceholder
-              src="/sample-hero.png"
+              src="/kentech-sub-visual.jpg"
               logoSrc="/logo-white.png"
               height="470px"
               eyebrow="Waste to Hydrogen"
-              description="Pilot-scale bio-upcycling facility"
+              description="KENTECH campus-based research platform"
               className="hero-art shadow-2xl shadow-slate-950/30"
             />
           </div>
@@ -106,10 +106,10 @@ export default function Home() {
 
           <ScrollReveal delay={140}>
             <ImagePlaceholder
-              src="/sample-lab.png"
+              src="/kentech-campus-2.png"
               height="420px"
               eyebrow="Research Infrastructure"
-              description="Research and analysis laboratory"
+              description="Campus-based research infrastructure"
             />
           </ScrollReveal>
         </div>
@@ -168,10 +168,10 @@ export default function Home() {
         <div className="section-wrap grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
           <ScrollReveal>
             <ImagePlaceholder
-              src="/sample-pilot.png"
+              src="/kentech-campus-1.png"
               height="380px"
               eyebrow="Pilot & Facilities"
-              description="Bench scale validation to industrial demonstration"
+              description="Scale-up and implementation milestone"
             />
           </ScrollReveal>
           <ScrollReveal delay={140}>
@@ -207,7 +207,7 @@ export default function Home() {
           <div className="grid gap-5 md:grid-cols-[1fr_1.2fr]">
             <ScrollReveal>
               <ImagePlaceholder
-                src="/sample-partnership.png"
+                src="/kentech-campus-3.png"
                 height="100%"
                 eyebrow="Industry Partnership"
                 description="Joint R&D and field demonstration"
