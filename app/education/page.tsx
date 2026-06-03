@@ -22,7 +22,7 @@ export default function EducationPage() {
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
           <ScrollReveal>
             <p className="section-kicker">People</p>
-            <h2 className="text-3xl font-black mb-5" style={{ color: "var(--primary)" }}>실험, 데이터, 사업화를 모두 경험하는 연구 교육</h2>
+            <h2 className="text-3xl font-black mb-5" style={{ color: "var(--primary)" }}>실험, 데이터, 사업화를 함께 경험하는 연구 교육 프로그램</h2>
             <p className="text-sm leading-8 mb-8" style={{ color: "var(--text-mid)" }}>
               학생과 연구자는 실험실 장비 운용, 분석 데이터 해석, 파일럿 스케일 검증, 산업 파트너와의 협업을
               하나의 연구 과정 안에서 경험합니다.

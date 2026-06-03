@@ -59,9 +59,9 @@ export default function AboutPage() {
             <ul className="space-y-4">
               {[
                 "바이오가스 기반 RNG 및 청정수소 생산 기술 고도화",
-                "원료 수급, 소화, 정제, 저장, 공급을 잇는 통합 플랫폼 설계",
+                "원료 수급, 소화, 정제, 저장, 공급을 잇는 통합 플랫폼을 설계합니다",
                 "기업·지자체와 연계한 파일럿 및 실증 사업 추진",
-                "전과정 평가와 탄소 감축 효과 검증을 통한 사업화 근거 확보",
+                "전과정 평가와 탄소 감축 효과 검증으로 사업화 근거를 확보합니다",
               ].map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-7" style={{ color: "var(--text-mid)" }}>
                   <span className="mt-2 h-2 w-2 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--accent)" }} />

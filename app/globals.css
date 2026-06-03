@@ -32,7 +32,9 @@ body {
   background: #ffffff;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
   text-rendering: optimizeLegibility;
+  word-break: keep-all;
 }
 
 a {
