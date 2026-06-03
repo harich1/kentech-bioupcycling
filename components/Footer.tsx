@@ -5,9 +5,9 @@ const researchLinks = [
   "바이오가스 & 혐기성 소화",
   "재생천연가스(RNG)",
   "RNG 기반 수소 생산",
-  "수소 저장 & 운송",
-  "탄소 순환",
-  "바이오소재",
+  "실시간 분석 & AX",
+  "CCU & 탄소 순환",
+  "Metabolomics",
 ];
 
 const quickLinks = [
@@ -30,12 +30,13 @@ export default function Footer() {
             width={190}
             height={54}
             className="mb-5 h-auto w-[180px] object-contain"
+            style={{ height: "auto" }}
           />
           <p className="max-w-xl text-sm leading-7 text-white/65">
             바이오매스를 청정에너지와 순환 탄소 솔루션으로 전환하는 연구·실증·스케일업 플랫폼입니다.
           </p>
           <div className="mt-5 space-y-1.5 text-xs leading-6 text-white/45">
-            <div>전라남도 나주시 에너지로 200, 한국에너지공과대학교</div>
+            <div>전라남도 나주시 켄텍길 21 한국에너지공과대학교</div>
             <div>bioupcycling@kentech.ac.kr | +82-61-XXX-XXXX</div>
           </div>
         </div>

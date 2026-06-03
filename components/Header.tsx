@@ -28,8 +28,7 @@ export default function Header() {
               alt="KENTECH 바이오업사이클링 센터"
               width={184}
               height={52}
-              className="h-auto w-[150px] object-contain sm:w-[184px]"
-              style={{ height: "auto" }}
+              className="object-contain"
               priority
             />
           </Link>

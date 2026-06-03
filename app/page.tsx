@@ -3,9 +3,9 @@ import ScrollReveal from "@/components/ScrollReveal";
 import Link from "next/link";
 
 const researchAreas = [
-  ["바이오가스 & 혐기성 소화", "유기성 폐기물을 안정적인 바이오가스 자원으로 전환"],
+  ["바이오가스 & 혐기성 소화", "유기성 폐기물의 고효율 전환과 안정적 바이오가스 생산"],
   ["재생천연가스(RNG)", "정제·고도화 공정을 통한 도시가스망 연계 가능성 검증"],
-  ["RNG 기반 수소 생산", "촉매 개질과 분석 기반 청정수소 생산"],
+  ["RNG 기반 수소 생산", "SMR 및 열촉매 기술을 활용한 청정수소 생산"],
   ["실시간 분석 & AX", "AI 전환과 실시간 분석으로 공정 운전 최적화"],
   ["CCU & 탄소 순환", "탄소 포집·활용과 바이오차, LCA 기반 순환 설계"],
   ["Metabolomics", "대사체 분석 기반 바이오공정 해석과 성능 진단"],
@@ -50,16 +50,18 @@ export default function Home() {
         <div className="section-wrap relative grid items-center gap-10 py-12 sm:py-14 lg:min-h-[680px] lg:grid-cols-[1.03fr_0.97fr] lg:gap-12 lg:py-16">
           <div className="animate-enter">
             <p className="eyebrow">KENTECH Bio-Upcycling Center</p>
-            <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.16] text-white sm:text-5xl lg:text-6xl">
-              바이오매스를 청정수소와 순환 탄소 흐름으로 전환합니다
+            <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.16] text-white sm:text-5xl lg:text-[52px]">
+              <span className="block">바이오매스를 청정수소와</span>
+              <span className="block">순환 탄소 솔루션으로</span>
+              <span className="block">전환합니다</span>
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
-              KENTECH 바이오업사이클링 센터는 유기성 폐기물에서 바이오가스, RNG, 수소, 탄소순환 소재까지
-              이어지는 연구·실증·산업 협력 플랫폼입니다.
+              KENTECH 바이오업사이클링 센터는 유기성 폐기물에서 바이오가스, RNG, 수소,
+              바이오소재까지 이어지는 연구·실증·스케일업 플랫폼입니다.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link href="/research" className="btn btn-primary justify-center">
-                연구 방향 보기
+                연구 분야 보기
               </Link>
               <Link href="/contact" className="btn btn-secondary-dark justify-center">
                 협력 문의
@@ -129,10 +131,10 @@ export default function Home() {
 
       <section className="section-pad bg-slate-50">
         <div className="section-wrap">
-          <ScrollReveal className="section-heading">
+          <ScrollReveal className="section-heading section-heading-wide">
             <p className="section-kicker">Research Concept Map</p>
-            <h2 className="section-title">AI 바이오전력·업사이클링 융합 연구 네트워크</h2>
-            <p className="section-copy">
+            <h2 className="section-title concept-title">AI 바이오전력·업사이클링 융합 연구 네트워크</h2>
+            <p className="section-copy concept-copy md:whitespace-nowrap">
               교수진의 연구 방향과 기관별 실증 역할을 하나의 컨셉 맵으로 연결해 센터가 추구하는 연구 생태계를 보여줍니다.
             </p>
           </ScrollReveal>
@@ -160,11 +162,11 @@ export default function Home() {
 
       <section className="section-pad bg-white">
         <div className="section-wrap">
-          <ScrollReveal className="section-heading">
+          <ScrollReveal className="section-heading section-heading-wide">
             <p className="section-kicker">Research Areas</p>
             <h2 className="section-title">6대 통합 연구 도메인</h2>
-            <p className="section-copy">
-              바이오매스 전환, 실시간 분석, CCU, 대사체 분석, 혐기성 소화, AI 기반 공정 최적화를 통합 플랫폼으로 연결합니다.
+            <p className="section-copy research-area-copy text-[15px] md:whitespace-nowrap">
+              BRIC형 연구센터 구조를 따라 핵심 연구 분야를 빠르게 훑고 상세 페이지로 이동할 수 있게 구성했습니다.
             </p>
           </ScrollReveal>
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -182,10 +184,13 @@ export default function Home() {
       </section>
 
       <section className="section-pad bg-white">
-        <div className="section-wrap grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+        <div className="section-wrap grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
           <ScrollReveal>
             <p className="section-kicker">Technology Platform</p>
-            <h2 className="section-title">자원에서 전력·열·수소까지 이어지는 순환 에너지 흐름</h2>
+            <h2 className="section-title">
+              <span className="block">자원에서 전력·열·수소까지</span>
+              <span className="block">이어지는 순환 에너지 흐름</span>
+            </h2>
             <p className="section-copy mt-5">
               원료, 바이오가스, 수소, 디지털 제어, 탄소순환을 하나의 플랫폼으로 묶고 산업 파트너의 인프라와 연결합니다.
             </p>
@@ -194,7 +199,7 @@ export default function Home() {
             </Link>
           </ScrollReveal>
           <ScrollReveal delay={140}>
-            <div className="flow-panel">
+            <div className="flow-panel flow-panel-compact">
               {platformSteps.map(([num, title, desc]) => (
                 <div key={num} className="flow-step">
                   <span>{num}</span>
@@ -211,7 +216,7 @@ export default function Home() {
         <div className="section-wrap grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
           <ScrollReveal>
             <ImagePlaceholder
-              src="/kentech-campus-1.png"
+              src="/pilot-campus-energy.jpg"
               height="380px"
               eyebrow="Pilot & Facilities"
               description="Scale-up and implementation milestone"
@@ -219,8 +224,8 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal delay={140}>
             <p className="section-kicker text-emerald-200">Pilot Scale-up</p>
-            <h2 className="section-title text-white">벤치 스케일에서 산업 실증까지</h2>
-            <p className="mt-5 text-base leading-8 text-white/68">
+            <h2 className="section-title !text-white text-white">벤치 스케일에서 산업 실증까지</h2>
+            <p className="mt-5 text-base leading-8 text-white/72">
               파일럿과 시설 정보는 연구센터의 신뢰도를 만드는 핵심입니다. TRL 로드맵, 주요 장비,
               테스트베드 원료를 첫 화면에서 바로 인지할 수 있도록 배치했습니다.
             </p>
