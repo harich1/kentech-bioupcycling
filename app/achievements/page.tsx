@@ -6,7 +6,9 @@ const achievements = [
   ["논문", "바이오가스, 수소, 순환 탄소 분야 국제 저널 성과를 정리합니다.", "/photo-analysis-lab.png"],
   ["특허", "공정, 장치, 운전 제어 관련 지식재산 포트폴리오를 축적합니다.", "/greeneple-ados-innovation.png"],
   ["학술 발표", "국내외 청정에너지 학회와 컨퍼런스에서 연구 성과를 공유합니다.", "/kentech-campus-1.png"],
+  ["수상 & 표창", "청정에너지·순환경제 분야 연구 우수성 및 혁신 성과를 정리합니다.", "/kentech-campus-2.png"],
   ["기술 실증", "파일럿 운전 데이터와 사업화 검증 자료를 단계적으로 공개합니다.", "/greeneple-ados-roadmap.png"],
+  ["미디어 갤러리", "파일럿 영상, 실험실 사진, 공정 애니메이션, 드론 촬영 자료를 모아 보여줍니다.", "/photo-pilot-plant.png"],
 ];
 
 export default function AchievementsPage() {
@@ -24,7 +26,7 @@ export default function AchievementsPage() {
             ["XX편", "SCI 논문"],
             ["XX건", "특허"],
             ["XX회", "학술 발표"],
-            ["XX건", "실증 성과"],
+            ["XX건", "수상·실증"],
           ].map(([value, label]) => (
             <div key={label}>
               <div className="text-3xl font-black">{value}</div>
@@ -36,7 +38,7 @@ export default function AchievementsPage() {
       </section>
 
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-6">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {achievements.map(([title, desc, src], index) => (
             <ScrollReveal key={title} delay={index * 80}>
               <article className="asset-card h-full">

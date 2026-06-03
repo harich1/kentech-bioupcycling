@@ -2,10 +2,12 @@ import ImagePlaceholder from "@/components/ImagePlaceholder";
 import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const stages = [
-  ["TRL 1-3", "벤치 스케일", "/photo-lab-reactors.png", "반응기 조건, 원료 조성, 촉매 성능을 실험실 단위에서 검증합니다."],
-  ["TRL 4-6", "파일럿 스케일", "/photo-pilot-plant.png", "연속 운전과 시스템 통합을 통해 현장 적용 전 성능을 확인합니다."],
-  ["TRL 7-9", "실증 스케일", "/greeneple-ados-roadmap.png", "산업 현장 적용성과 상업 운전 전환 가능성을 검증합니다."],
+type Stage = [trl: string, label: string, src: string, items: string[]];
+
+const stages: Stage[] = [
+  ["TRL 1-3", "벤치 스케일", "/photo-lab-reactors.png", ["실험실 규모의 핵심 기술 개념 검증", "핵심 기술 타당성 검증", "공정 파라미터 최적화", "소재 스크리닝"]],
+  ["TRL 4-6", "파일럿 스케일", "/photo-pilot-plant.png", ["파일럿 시설에서 통합 시스템 시험", "시스템 통합 테스트", "연속 운전 시험", "성능 벤치마킹"]],
+  ["TRL 7-9", "실증 스케일", "/greeneple-ados-roadmap.png", ["완전한 산업 실증 및 사업화", "산업 현장 통합", "모듈형 보급 배치", "상업 운전 전환"]],
 ];
 
 export default function PilotPage() {
@@ -14,29 +16,36 @@ export default function PilotPage() {
       <PageHero
         breadcrumb="홈 > 파일럿 & 스케일업"
         title="파일럿 & 스케일업"
-        subtitle="벤치 연구에서 실증 운전까지 이어지는 TRL 기반 스케일업 로드맵"
+        subtitle="벤치 스케일 실험부터 완전한 상업 실증까지 TRL 기반 로드맵"
       />
 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal className="max-w-3xl mb-10">
             <p className="section-kicker">Scale-up Roadmap</p>
-            <h2 className="text-3xl font-black mb-4" style={{ color: "var(--primary)" }}>검증 단계마다 다른 이미지와 자료를 배치했습니다</h2>
+            <h2 className="text-3xl font-black mb-4" style={{ color: "var(--primary)" }}>실험실에서 산업 규모까지</h2>
             <p className="text-sm leading-7" style={{ color: "var(--text-mid)" }}>
-              파일럿 페이지는 기술의 성숙도를 보여주는 곳이므로, 실험실 사진과 플랜트 사진, 로드맵 자료가
-              단계적으로 이어지도록 구성했습니다.
+              KENTECH 바이오업사이클링 센터는 벤치 스케일의 핵심 기술 검증에서 파일럿 시설 통합 시험,
+              산업 현장 실증과 상업 운전 전환까지 이어지는 단계형 스케일업 구조를 제시합니다.
             </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {stages.map(([trl, label, src, desc], index) => (
+            {stages.map(([trl, label, src, items], index) => (
               <ScrollReveal key={trl} delay={index * 90}>
                 <article className="asset-card h-full">
                   <ImagePlaceholder src={src} description={`${label} 이미지`} height="230px" className="!rounded-none" />
                   <div className="asset-card-body">
                     <p className="text-xs font-bold mb-1" style={{ color: "var(--accent)" }}>{trl}</p>
                     <h3 className="text-xl font-black mb-3" style={{ color: "var(--primary)" }}>{label}</h3>
-                    <p className="text-sm leading-7" style={{ color: "var(--text-mid)" }}>{desc}</p>
+                    <ul className="space-y-2">
+                      {(items as string[]).map((item) => (
+                        <li key={item} className="flex gap-2 text-sm leading-6" style={{ color: "var(--text-mid)" }}>
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "var(--accent)" }} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </article>
               </ScrollReveal>

@@ -8,7 +8,7 @@ const projects = [
   ["순환 탄소 네트워크", "CCU, 바이오차, 영양염 회수를 묶은 순환 탄소 경제 실증", "/greeneple-ados-innovation.png", ["CCU", "탄소순환", "LCA"]],
   ["수소 혼입 실증", "천연가스 파이프라인 기반 수소 혼입 안전성과 운전 조건 평가", "/photo-pilot-plant.png", ["수소혼입", "파이프라인", "안전성"]],
   ["스마트 바이오리파이너리", "디지털 트윈과 분석 데이터를 활용한 공정 최적화", "/photo-analysis-lab.png", ["AI", "디지털트윈", "자율운전"]],
-  ["정부 R&D 및 산업협력", "정부 과제, 국제협력, 기업 공동 실증을 연결하는 연구 포트폴리오", "/photo-partner-meeting.png", ["정부과제", "협력", "사업화"]],
+  ["정부 R&D 및 산업협력", "국토부·기후부·산업부·TIPS 프로그램 및 국제협력 네트워크 지원 과제", "/photo-partner-meeting.png", ["국토부", "기후부", "산업부", "TIPS"]],
 ];
 
 export default function ProjectsPage() {

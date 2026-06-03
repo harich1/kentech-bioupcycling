@@ -28,6 +28,31 @@ export default function ContactPage() {
                 <p>+82-61-XXX-XXXX</p>
               </div>
             </div>
+            <div className="asset-card">
+              <div className="asset-card-body">
+                <p className="section-kicker mb-3">Greeneple Office</p>
+                <h3 className="text-lg font-black mb-3" style={{ color: "var(--primary)" }}>그리니플(Greeneple) 주식회사</h3>
+                <p className="text-sm leading-7 mb-4" style={{ color: "var(--text-mid)" }}>
+                  바이오업사이클링 사업화 파트너로서 기술이전, 공동 실증, 사업화 논의를 함께 연결합니다.
+                </p>
+                <a href="mailto:contact@greeneple.com" className="text-sm font-bold hover:underline" style={{ color: "var(--accent)" }}>
+                  contact@greeneple.com
+                </a>
+              </div>
+            </div>
+            <div className="asset-card">
+              <div className="asset-card-body">
+                <p className="section-kicker mb-3">Quick Partnership</p>
+                <h3 className="text-lg font-black mb-4" style={{ color: "var(--primary)" }}>빠른 협력 문의</h3>
+                <div className="grid grid-cols-2 gap-2">
+                  {["연구 협력", "산업 파트너십", "팀 합류", "언론·미디어"].map((item) => (
+                    <div key={item} className="rounded border px-3 py-2 text-center text-xs font-bold" style={{ borderColor: "var(--line)", color: "var(--primary)" }}>
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </ScrollReveal>
 
           <ScrollReveal delay={120}>

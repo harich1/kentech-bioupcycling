@@ -6,22 +6,32 @@ const domains = [
   {
     title: "바이오가스 & 혐기성 소화",
     src: "/photo-lab-reactors.png",
-    topics: ["건식·고율 혐기성 소화", "농업 부산물 및 음식물 폐기물 처리", "소화조 운전 조건 최적화"],
+    topics: ["건식 혐기성 소화 기술", "고율 혐기성 소화 공정", "유기성 폐기물 자원화", "농업 바이오매스 처리"],
   },
   {
     title: "재생천연가스(RNG)",
     src: "/photo-pilot-plant.png",
-    topics: ["바이오가스 정제·고도화", "메탄 순도 향상", "도시가스망 연계 가능성 평가"],
+    topics: ["바이오가스 정제·고도화", "메탄 순도 향상 공정", "도시가스망 연계 플랫폼"],
   },
   {
     title: "RNG 기반 수소 생산",
     src: "/photo-analysis-lab.png",
-    topics: ["촉매 개질 반응", "가스 조성 분석", "수소 생산 효율 평가"],
+    topics: ["수증기 메탄 개질(SMR)", "열촉매 수소 생산 기술", "바이오가스 기반 수소 생산 효율 평가"],
   },
   {
-    title: "탄소 순환 & 바이오소재",
+    title: "수소 저장 & 운송",
+    src: "/greeneple-ados-roadmap.png",
+    topics: ["수소 혼입 기술(Blending)", "도시가스 공급망 기반 수송", "LOHC(액상유기수소화물)", "금속수소화물 시스템"],
+  },
+  {
+    title: "탄소 순환",
     src: "/greeneple-ados-innovation.png",
-    topics: ["바이오차 및 영양염 회수", "CCU 연계", "바이오소재 전환 경로 탐색"],
+    topics: ["탄소 포집·활용(CCU)", "영양염 회수 기술", "바이오차(Biochar) 생산", "전과정 평가(LCA)"],
+  },
+  {
+    title: "바이오소재",
+    src: "/greeneple-technology-features.png",
+    topics: ["PHA(폴리하이드록시알카노에이트)", "바이오플라스틱", "폐기물→소재 전환 기술"],
   },
 ];
 
@@ -66,10 +76,10 @@ export default function ResearchPage() {
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal className="max-w-3xl mb-12">
             <p className="section-kicker">Research Domains</p>
-            <h2 className="text-3xl font-black mb-4" style={{ color: "var(--primary)" }}>실험실 연구와 파일럿 검증을 한 흐름으로 연결합니다</h2>
+            <h2 className="text-3xl font-black mb-4" style={{ color: "var(--primary)" }}>바이오매스→수소 순환경제를 이끄는 6대 통합 연구 도메인</h2>
             <p className="text-sm leading-7" style={{ color: "var(--text-mid)" }}>
               각 연구 도메인은 독립적인 기술 축이면서 동시에 하나의 순환 플랫폼으로 통합됩니다.
-              원료 특성, 공정 운전, 가스 고도화, 수소 전환, 탄소 감축 효과를 함께 검증합니다.
+              원료 특성, 공정 운전, 가스 고도화, 수소 생산·저장, 탄소 순환, 바이오소재 전환을 함께 검증합니다.
             </p>
           </ScrollReveal>
 

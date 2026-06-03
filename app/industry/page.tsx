@@ -8,6 +8,14 @@ const collaboration = [
   ["사업화·스핀오프", "연구 성과를 창업, 라이선스, 공동사업 모델로 확장합니다."],
 ];
 
+const sectors = ["에너지·유틸리티", "가스 기업", "수소 기업", "폐기물 관리", "농업 분야", "스타트업·사업화"];
+
+const globalPartners = [
+  ["국내외 대학", "공동 연구 및 학생 교류 프로그램을 위한 글로벌 연구 대학과의 협력"],
+  ["연구기관", "기술 개발을 위한 국내외 정부·민간 연구기관과의 협력 네트워크"],
+  ["기후·에너지 네트워크", "글로벌 기후 및 청정에너지 네트워크, 정책 포럼 참여"],
+];
+
 const partnerRoles = [
   {
     name: "한국전력",
@@ -44,6 +52,13 @@ export default function IndustryPage() {
               에너지·유틸리티, 가스, 수소, 폐기물 관리, 농업, 스타트업 파트너와 함께
               실증 가능한 기술 패키지를 설계합니다.
             </p>
+            <div className="flex flex-wrap gap-2 mb-8">
+              {sectors.map((sector) => (
+                <span key={sector} className="px-3 py-1.5 rounded-full text-xs font-bold" style={{ backgroundColor: "var(--accent-pale)", color: "var(--accent)" }}>
+                  {sector}
+                </span>
+              ))}
+            </div>
             <div className="grid sm:grid-cols-3 gap-4">
               {collaboration.map(([title, desc]) => (
                 <div key={title} className="asset-card">
@@ -57,6 +72,29 @@ export default function IndustryPage() {
           </ScrollReveal>
           <ScrollReveal delay={120}>
             <ImagePlaceholder src="/photo-partner-meeting.png" description="산학 협력 회의 이미지" height="390px" />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="py-16" style={{ backgroundColor: "var(--gray-bg)" }}>
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+          <ScrollReveal>
+            <ImagePlaceholder src="/greeneple-ados-innovation.png" description="Greeneple 바이오업사이클링 사업화 자료" height="360px" />
+          </ScrollReveal>
+          <ScrollReveal delay={120}>
+            <p className="section-kicker">Greeneple Collaboration</p>
+            <h2 className="text-3xl font-black mb-4" style={{ color: "var(--primary)" }}>그리니플(Greeneple) 주식회사와 사업화 협력</h2>
+            <p className="text-sm leading-8 mb-6" style={{ color: "var(--text-mid)" }}>
+              초안에서 제시된 Greeneple 협력 축을 반영해 바이오업사이클링 기술이 연구에 머물지 않고
+              기술이전, 스핀오프, 공동 실증으로 확장되는 사업화 파트너 구조를 보여줍니다.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-3">
+              {["기술이전", "스핀오프", "공동 실증"].map((item) => (
+                <div key={item} className="asset-card">
+                  <div className="asset-card-body text-center text-sm font-bold" style={{ color: "var(--primary)" }}>{item}</div>
+                </div>
+              ))}
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -104,6 +142,30 @@ export default function IndustryPage() {
               </article>
             </ScrollReveal>
           ))}
+        </div>
+      </section>
+
+      <section className="py-16" style={{ backgroundColor: "var(--gray-bg)" }}>
+        <div className="max-w-7xl mx-auto px-6">
+          <ScrollReveal className="max-w-3xl mb-10">
+            <p className="section-kicker">Global Network</p>
+            <h2 className="text-3xl font-black mb-4" style={{ color: "var(--primary)" }}>글로벌 파트너십</h2>
+            <p className="text-sm leading-7" style={{ color: "var(--text-mid)" }}>
+              학계, 산업계, 글로벌 청정에너지 생태계를 잇는 연구 협력 허브로서 공동 연구와 정책 네트워크를 확장합니다.
+            </p>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-3 gap-6">
+            {globalPartners.map(([title, desc], index) => (
+              <ScrollReveal key={title} delay={index * 80}>
+                <article className="asset-card h-full">
+                  <div className="asset-card-body">
+                    <h3 className="text-lg font-black mb-3" style={{ color: "var(--primary)" }}>{title}</h3>
+                    <p className="text-sm leading-7" style={{ color: "var(--text-mid)" }}>{desc}</p>
+                  </div>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
     </>
