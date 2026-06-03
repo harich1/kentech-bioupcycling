@@ -8,6 +8,24 @@ const collaboration = [
   ["사업화·스핀오프", "연구 성과를 창업, 라이선스, 공동사업 모델로 확장합니다."],
 ];
 
+const partnerRoles = [
+  {
+    name: "한국전력",
+    role: "전력공급 및 IDPP",
+    desc: "전력 인프라와 분산형 전력 플랫폼 관점에서 바이오전력 실증 모델을 연결합니다.",
+  },
+  {
+    name: "롯데건설",
+    role: "EPC",
+    desc: "파일럿·실증 설비의 설계, 조달, 시공 관점에서 현장 구축 가능성을 검토합니다.",
+  },
+  {
+    name: "한국수자력원자력",
+    role: "CHP",
+    desc: "열병합 활용과 에너지 공급 안정성 관점에서 바이오가스 및 RNG 기반 에너지 활용 모델을 확장합니다.",
+  },
+];
+
 export default function IndustryPage() {
   return (
     <>
@@ -44,6 +62,32 @@ export default function IndustryPage() {
       </section>
 
       <section className="py-16" style={{ backgroundColor: "var(--gray-bg)" }}>
+        <div className="max-w-7xl mx-auto px-6">
+          <ScrollReveal className="max-w-3xl mb-10">
+            <p className="section-kicker">Demonstration Partners</p>
+            <h2 className="text-3xl font-black mb-4" style={{ color: "var(--primary)" }}>전력·EPC·CHP 실증 파트너십</h2>
+            <p className="text-sm leading-7" style={{ color: "var(--text-mid)" }}>
+              연구성과가 실제 인프라로 이어질 수 있도록 전력공급, 설비 구축, 열병합 활용까지 역할을 분담하는
+              산업협력 구조를 구축합니다.
+            </p>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-3 gap-6">
+            {partnerRoles.map((partner, index) => (
+              <ScrollReveal key={partner.name} delay={index * 90}>
+                <article className="asset-card h-full">
+                  <div className="asset-card-body">
+                    <p className="text-xs font-black mb-2" style={{ color: "var(--accent)" }}>{partner.role}</p>
+                    <h3 className="text-xl font-black mb-3" style={{ color: "var(--primary)" }}>{partner.name}</h3>
+                    <p className="text-sm leading-7" style={{ color: "var(--text-mid)" }}>{partner.desc}</p>
+                  </div>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-6">
           {[
             ["/kentech-campus-3.png", "KENTECH 협력 네트워크", "KENTECH의 교육·연구 네트워크를 기반으로 파트너십을 확장합니다."],
