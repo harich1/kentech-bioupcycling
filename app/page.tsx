@@ -50,7 +50,13 @@ export default function Home() {
         <div className="section-wrap relative grid items-center gap-10 py-12 sm:py-14 lg:min-h-[680px] lg:grid-cols-[1.03fr_0.97fr] lg:gap-12 lg:py-16">
           <div className="animate-enter">
             <p className="eyebrow">KENTECH Bio-Upcycling Center</p>
-            <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.16] text-white sm:text-5xl lg:text-[52px]">
+            <h1 className="mt-5 max-w-4xl text-[36px] font-bold leading-[1.18] text-white sm:hidden">
+              <span className="block">바이오매스를</span>
+              <span className="block">청정수소와</span>
+              <span className="block">순환 탄소 솔루션으로</span>
+              <span className="block">전환합니다</span>
+            </h1>
+            <h1 className="mt-5 hidden max-w-4xl font-bold leading-[1.16] text-white sm:block sm:text-5xl lg:text-[52px]">
               <span className="block">바이오매스를 청정수소와</span>
               <span className="block">순환 탄소 솔루션으로</span>
               <span className="block">전환합니다</span>
