@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useState } from "react";
 
@@ -23,13 +23,10 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <div className="flex h-20 items-center justify-between gap-5">
           <Link href="/" className="flex min-w-0 items-center" aria-label="홈으로 이동">
-            <Image
+            <img
               src="/logo-transparent.png"
               alt="KENTECH 바이오업사이클링 센터"
-              width={184}
-              height={52}
-              className="object-contain"
-              priority
+              className="h-auto w-[150px] object-contain sm:w-[184px]"
             />
           </Link>
 

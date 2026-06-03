@@ -20,8 +20,12 @@ export default function ContactPage() {
             <div>
               <h2 className="text-xl font-black mb-5" style={{ color: "var(--primary)" }}>KENTECH 바이오업사이클링 센터</h2>
               <div className="space-y-3 text-sm" style={{ color: "var(--text-mid)" }}>
-                <p>한국에너지공과대학교(KENTECH), 전라남도 나주시 에너지로 200</p>
-                <p><a href="mailto:bioupcycling@kentech.ac.kr" className="hover:underline" style={{ color: "var(--accent)" }}>bioupcycling@kentech.ac.kr</a></p>
+                <p>전라남도 나주시 켄텍길 21 한국에너지공과대학교</p>
+                <p>
+                  <a href="mailto:bioupcycling@kentech.ac.kr" className="hover:underline" style={{ color: "var(--accent)" }}>
+                    bioupcycling@kentech.ac.kr
+                  </a>
+                </p>
                 <p>+82-61-XXX-XXXX</p>
               </div>
             </div>
@@ -36,13 +40,13 @@ export default function ContactPage() {
                     <div key={type} className="rounded border border-gray-200 px-4 py-3 text-sm font-bold" style={{ color: "var(--primary)" }}>{type}</div>
                   ))}
                 </div>
-                <form className="space-y-4">
-                  <input className="contact-input" placeholder="성함 / 기관명" />
-                  <input className="contact-input" placeholder="이메일" />
-                  <input className="contact-input" placeholder="문의 제목" />
-                  <textarea className="contact-input min-h-36 resize-none" placeholder="문의 내용을 입력해 주세요." />
-                  <button type="button" className="primary-button w-full justify-center">문의 보내기</button>
-                </form>
+                <div className="rounded-md border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm leading-7 text-slate-700">
+                  현재 웹사이트는 정적 안내 페이지로 운영되며, 별도의 서버에 개인정보를 저장하지 않습니다.
+                  문의는 이메일 링크를 통해 보내 주세요.
+                </div>
+                <a href="mailto:bioupcycling@kentech.ac.kr" className="btn btn-primary mt-6 w-full justify-center">
+                  이메일로 문의하기
+                </a>
               </div>
             </div>
           </ScrollReveal>
