@@ -26,6 +26,18 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  async redirects() {
+    const destinations: Record<string, string> = {
+      '/': '/ko', '/about': '/ko/about', '/research': '/ko/research',
+      '/technology': '/ko/research', '/pilot': '/ko/projects/gangjin',
+      '/projects': '/ko/projects', '/industry': '/ko/about',
+      '/facilities': '/ko/research', '/education': '/ko/contact',
+      '/achievements': '/ko/projects', '/contact': '/ko/contact',
+      '/news': '/ko/news', '/projects/naju': '/ko/projects/naju',
+      '/projects/gangjin': '/ko/projects/gangjin',
+    };
+    return Object.entries(destinations).map(([source,destination]) => ({source,destination,permanent:true}));
+  },
   async headers() {
     return [
       {
