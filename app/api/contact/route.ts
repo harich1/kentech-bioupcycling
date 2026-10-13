@@ -85,7 +85,7 @@ export async function POST(request: NextRequest) {
     }
 
     const resend = new Resend(apiKey);
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from,
       to,
       replyTo: email,
@@ -101,6 +101,10 @@ export async function POST(request: NextRequest) {
         message,
       ].join("\n"),
     });
+
+    if (result.error) {
+      return NextResponse.json({ message: "문의 처리 중 오류가 발생했습니다." }, { status: 502 });
+    }
 
     return NextResponse.json({ message: "문의가 접수되었습니다." });
   } catch {
