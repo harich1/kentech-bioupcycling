@@ -61,6 +61,14 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
+      {
+        source: "/bixpo-2026/forum.pdf",
+        headers: [
+          { key: "Cache-Control", value: "no-store, no-cache, max-age=0, must-revalidate" },
+          { key: "CDN-Cache-Control", value: "no-store" },
+          { key: "Vercel-CDN-Cache-Control", value: "no-store" },
+        ],
+      },
     ];
   },
 };
