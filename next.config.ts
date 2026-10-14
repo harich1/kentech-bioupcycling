@@ -20,23 +20,40 @@ const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "DENY" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
-  { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+  },
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=63072000; includeSubDomains; preload",
+  },
 ];
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   async redirects() {
     const destinations: Record<string, string> = {
-      '/': '/ko', '/about': '/ko/about', '/research': '/ko/research',
-      '/technology': '/ko/research', '/pilot': '/ko/projects/gangjin',
-      '/projects': '/ko/projects', '/industry': '/ko/about',
-      '/facilities': '/ko/research', '/education': '/ko/contact',
-      '/achievements': '/ko/projects', '/contact': '/ko/contact',
-      '/news': '/ko/news', '/projects/naju': '/ko/projects/naju',
-      '/projects/gangjin': '/ko/projects/gangjin',
+      "/": "/ko",
+      "/about": "/ko/about",
+      "/research": "/ko/research",
+      "/technology": "/ko/technology",
+      "/pilot": "/ko/pilot",
+      "/projects": "/ko/projects",
+      "/industry": "/ko/industry",
+      "/facilities": "/ko/facilities",
+      "/education": "/ko/education",
+      "/achievements": "/ko/achievements",
+      "/contact": "/ko/contact",
+      "/news": "/ko/news",
+      "/projects/naju": "/ko/projects/naju",
+      "/projects/gangjin": "/ko/projects/gangjin",
     };
-    return Object.entries(destinations).map(([source,destination]) => ({source,destination,permanent:true}));
+    return Object.entries(destinations).map(([source, destination]) => ({
+      source,
+      destination,
+      permanent: true,
+    }));
   },
   async headers() {
     return [

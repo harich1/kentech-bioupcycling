@@ -1,0 +1,20 @@
+강화 미리보기 — 배포하지 않음
+작업 브랜치: codex/center-restoration-preview
+현재 운영 커밋: c2a1c4b4c1c5c46bdcc357e385f7f5daeb69b10e
+최초 원본: b70b57250b564f1e33890c50229a221259f127c2
+국문·영문 각 15개 페이지, 총 30개.
+
+변경: 기존 연구 6개 분야(수소 저장·운송·바이오소재 포함) 및 AX·실시간 분석·대사체 분석 복원. 기술 플랫폼, 파일럿 로드맵, 연구 인프라, 산업협력, 교육·연구 참여, 성과·자료 독립 페이지 복원. 한·영 네트워크 페이지 추가. 하위 메뉴·전체 사이트맵·동일 페이지 언어 전환. 남색·녹색 디자인과 사진·도식·표·타임라인 구성.
+나주: 문제-솔루션 설명, 볏짚 명시, 물질/데이터 흐름 분리, 4개 검증 목표, 수행기관·일정·정보 기준일, 공통 문의처. 현장 사진 및 전용 문의처 미확보 표기.
+
+반영 보류 항목과 원문 대조는 work/restoration-review/index.html에서 확인합니다. 모든 기존 공개 자산 파일은 수정 없이 보존합니다. 숫자가 있는 기술 비교표는 확인된 현장 성과로 재게시하지 않습니다.
+
+검수: production build 및 TypeScript 통과. scripts/check-restoration.mjs 63개 검사(30개 언어별 페이지 포함) 통과. PC 1440px 및 모바일 390px에서 30개 페이지 가로 넘침 없음. 320px 주요 4개 경로 추가 확인. PC 메뉴 펼침/Escape, 모바일 메뉴 이동·닫힘, 나주 영문→국문 동일 경로 이동 확인. 실제 이메일 전송/수신 검증은 미실시.
+
+미리보기 빌드: PowerShell에서 $env:SITE_PREVIEW='1'; npm.cmd run build
+미리보기 실행: npm.cmd run start -- --port 3102
+미리보기 주소: http://localhost:3102/ko
+기존 최초 소스 미리보기: work/original-preview에서 npm.cmd run dev -- --webpack --port 3101
+비교 페이지 서버: workspace에서 node work/restoration-review/server.mjs
+
+향후 운영 배포 시 SITE_PREVIEW를 제거한 상태에서 다시 build하고 noindex가 없는지 확인해야 합니다. 현재 빌드에는 검색 제외 noindex가 적용돼 있습니다. 사용자 검토 이전에 master push/merge 또는 운영 배포를 하지 않습니다.
