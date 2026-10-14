@@ -24,7 +24,7 @@ export default async function Layout({
   const { lang } = await params;
   if (!isLang(lang)) notFound();
   return (
-    <html lang={lang} className={font.className}>
+    <html lang={lang} className={`${font.className} ${font.variable}`}>
       <body>
         <a className="skip-link" href="#main-content">
           {copy[lang].skip}
