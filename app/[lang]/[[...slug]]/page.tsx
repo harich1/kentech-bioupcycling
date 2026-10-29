@@ -1,3 +1,4 @@
+import Collaborators from "@/components/Collaborators";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -143,6 +144,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
             </Link>
           </div>
         </section>
+        <Collaborators lang={lang} />
         <section className="section-wrap content-section intro-split">
           <Heading
             eyebrow="OUR PURPOSE"

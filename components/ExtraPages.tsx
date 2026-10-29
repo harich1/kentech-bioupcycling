@@ -1,3 +1,4 @@
+import Collaborators from "@/components/Collaborators";
 import Link from "next/link";
 import { copy, type Lang } from "@/lib/content";
 import { tr, crosscut } from "@/lib/center";
@@ -257,6 +258,7 @@ export default function ExtraPages({
           ),
           "RESEARCH NETWORK",
         )}
+        <Collaborators lang={lang} full />
         <section className="section-wrap content-section">
           <div className="network-core">
             <p className="eyebrow">BIO-UPCYCLING CENTER</p>
