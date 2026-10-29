@@ -5,6 +5,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { copy, isLang } from "@/lib/content";
 import "../globals.css";
+import "../collaborators.css";
 const font = Noto_Sans_KR({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
